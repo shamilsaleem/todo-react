@@ -12,7 +12,7 @@ function AddInput(props) {
     const newToDoOps = useContext(newToDo);
     function updateToDo() {
         if (newToDoRaw !== '') {
-            newToDoOps.changeToDos([newToDoRaw, ...newToDoOps.toDos]);
+            newToDoOps.changeToDos([{text:newToDoRaw, time: new Date(), status:true}, ...newToDoOps.toDos]);
             props.buttonState.changeAddButtonState(!props.buttonState.addButtonState)
         } else {
             props.buttonState.changeAddButtonState(!props.buttonState.addButtonState)

@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import './App.css'
 import DateAndTime from './components/DateAndTime';
 import AddToDo from './components/AddToDo';
+import TodoList from './components/TodoList';
 
 export const newToDo = createContext();
 
@@ -9,7 +10,15 @@ export default function App() {
 
   const [toDos, changeToDos] = useState([]);
 
-  useEffect(()=>console.log(toDos), [toDos])
+  useEffect(() => console.log(toDos), [toDos])
+
+  function renderTodos() {
+    return toDos.map(({text, time, status}, index) => {
+      return (
+        <TodoList todo={{ text, time, status, index }} />
+      )
+    })
+  }
 
   return (
     <div className="container">
@@ -23,9 +32,14 @@ export default function App() {
         </div>
         <div className="row">
           <div className="d-grid gap-2 col-6 mx-auto">
-            <newToDo.Provider value={{toDos, changeToDos}}>
+            <newToDo.Provider value={{ toDos, changeToDos }}>
               <AddToDo />
             </newToDo.Provider>
+          </div>
+          <div className="row">
+            <div className="col-sm-12 mb-3 mb-sm-0">
+              {renderTodos()}
+            </div>
           </div>
         </div>
       </div>
