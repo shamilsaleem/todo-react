@@ -1,31 +1,26 @@
-import React, { createContext, useState, useEffect } from 'react';
-import './App.css'
-import DateAndTime from './components/DateAndTime';
-import AddToDo from './components/AddToDo';
-import TodoList from './components/TodoList';
+import React, { createContext, useState } from "react";
+import "./App.css";
+import DateAndTime from "./components/DateAndTime";
+import AddToDo from "./components/AddToDo";
+import TodoList from "./components/TodoList";
 
 export const newToDo = createContext();
 
 export default function App() {
-
   const [toDos, changeToDos] = useState([]);
 
-  useEffect(() => console.log(toDos), [toDos])
-
   function renderTodos() {
-    return toDos.map(({text, time, status}, index) => {
-      return (
-        <TodoList todo={{ text, time, status, index }} />
-      )
-    })
+    return toDos.map(({ text, time, status }, index) => {
+      return <TodoList todo={{ text, time, status, index }} />;
+    });
   }
 
   return (
     <div className="container">
       <div className="col-12">
         <div className="row">
-          <h1 className='center mt-3'>ToDo List</h1>
-          <p className='center'>Simple ToDo app using React</p>
+          <h1 className="center mt-3">ToDo List</h1>
+          <p className="center">Simple ToDo app using React</p>
         </div>
         <div className="row">
           <DateAndTime />
@@ -36,14 +31,13 @@ export default function App() {
               <AddToDo />
             </newToDo.Provider>
           </div>
-          <div className="row">
-            <div className="col-sm-12 mb-3 mb-sm-0">
-              {renderTodos()}
-            </div>
-          </div>
+        </div>
+        <div className="row">
+          <newToDo.Provider value={{ toDos, changeToDos }}>
+            <div className="col-sm-12 mb-3 mb-sm-0">{renderTodos()}</div>
+          </newToDo.Provider>
         </div>
       </div>
     </div>
   );
 }
-
