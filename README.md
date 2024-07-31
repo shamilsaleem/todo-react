@@ -19,6 +19,5 @@ npm run build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 #### You can find me all over the web
-![Visits Badge](https://badges.pufler.dev/visits/shamilsaleem/todo-react)
 [![Twitter Badge](https://img.shields.io/badge/Instagram-Profile-informational?style=flat&logo=twitter&logoColor=white&color=1CA2F1)](https://instagram.com/shamil.saleem)
 [![Twitter Badge](https://img.shields.io/badge/Youtube-Profile-informational?style=flat&logo=twitter&logoColor=white&color=1CA2F1)](https://www.youtube.com/@shamil.saleem/videos)
