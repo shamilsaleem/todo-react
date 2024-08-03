@@ -15,8 +15,8 @@ function TodoList(props) {
   return (
     <div key={props.todo.index} className="card mt-3">
       <div className="card-header">
-        #{props.todo.index + 1} · {props.todo.time.getHours()}:
-        {props.todo.time.getHours()>= 10 ? props.todo.time.getMinutes() : "0" + props.todo.time.getMinutes()}
+        #{props.todo.index + 1} · {props.todo.timeObject.getHours()}:
+        {props.todo.timeObject.getHours()>= 10 ? props.todo.timeObject.getMinutes() : "0" + props.todo.timeObject.getMinutes()}
         <input className="form-check-input float-end"
           type="checkbox"
           onChange={() => toDoStatechange(props.todo.index)} />
