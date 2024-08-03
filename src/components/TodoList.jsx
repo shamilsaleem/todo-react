@@ -19,6 +19,7 @@ function TodoList(props) {
       if (index !== key) {
         newToDoList.push(toDo)
       }
+      return null
     })
     newToDoOps.changeToDos(newToDoList)
   }
