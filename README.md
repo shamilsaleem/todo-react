@@ -2,6 +2,10 @@
 ##### Simple ToDo app using React
 <img align="center" src="https://github.com/user-attachments/assets/2a4ff789-0440-46a3-9ab5-7bf837163696" width="100%" />
 
+## Features
+- Store ToDos in the browser
+- Mininal interface
+
 ## Installation
 ```bash
 git clone https://github.com/shamilsaleem/todo-react.git
